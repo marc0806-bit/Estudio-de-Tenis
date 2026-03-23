@@ -1,7 +1,9 @@
 # Estudio-de-Tenis
 Aquí vamos a realizar nuestro análisis de la data sobre el tema de "Tenis", del subgrupo 9 (Andres Ortega y Marco Antonio Ramírez)
 Planteamiento del problema.
-En el tenis profesional, el ranking ATP es el barómetro oficial que mide el éxito y la regularidad de los jugadores. Este sistema no solo determina quiénes son los mejores del mundo, sino que también condiciona la participación en torneos, la asignación de cabezas de serie y las expectativas del público y de los mercados de apuestas. Sin embargo, el rendimiento de un jugador no depende exclusivamente de su posición numérica; factores externos como el tipo de superficie, la categoría del torneo y la presión de la ronda en disputa juegan un papel fundamental.
+En el tenis profesional, el ranking ATP es la métrica oficial que mide el éxito y el desempeño de los jugadores. Este sistema no solo determina quiénes son los mejores del mundo, sino que también condiciona la participación en torneos, la asignación de cabezas de serie y las expectativas del público. Ser parte del top 100 no solo garantiza notoriedad en el tenis, sino que te ofrece otros beneficios como el acceso a torneos de mayor categoría, una exposición constante a diferentes superficies y prestigio en la carrera deportiva.
+
+Ahora bien, ¿Es el ranking ATP una métrica suficiente para comparar a dos jugadores que compiten en cancha? Además, ¿En qué superficie el ranking ATP es más representativo? En el presente trabajo describiremos cómo se comporta el top 100 de jugadores en diferentes superficies, rondas y torneos en un histórico comprendido entre 2015-2019 en la epoca dorada del tenis.
 
 
 Objetivo General
