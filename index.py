@@ -2,6 +2,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib as plt
+import numpy as np
 df = pd.read_csv('Tenis.csv')
 
 df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
@@ -16,5 +17,13 @@ print(df['Surface'].value_counts())
 
 def partidos_per_torneo(df):
     return df['Tournament'].value_counts()
+df = df[(df['Date'].dt.year >= 2015) & (df['Date'].dt.year <= 2025)]
+df = df[(df['Rank_1'] <= 50) & (df['Rank_2'] <= 50)]
+
+# --- NUEVAS COLUMNAS PARA EL USO DE LOS GANADORES DE LOS PARTIDOS ---
+df['winner_rank'] = np.where(df['Winner'] == df['Player_1'], df['Rank_1'], df['Rank_2'])
+df['loser_rank'] = np.where(df['Winner'] == df['Player_1'], df['Rank_2'], df['Rank_1']) 
+
+print(df[['Tournament', 'winner_rank', 'loser_rank']].head())
 
 print(partidos_per_torneo(df))
