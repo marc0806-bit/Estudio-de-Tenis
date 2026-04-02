@@ -17,7 +17,7 @@ print(df['Surface'].value_counts())
 
 def partidos_per_torneo(df):
     return df['Tournament'].value_counts()
-df = df[(df['Date'].dt.year >= 2015) & (df['Date'].dt.year <= 2025)]
+df = df[(df['Date'].dt.year > 2015) & (df['Date'].dt.year <= 2025)]
 df = df[(df['Rank_1'] <= 50) & (df['Rank_2'] <= 50)]
 
 # --- NUEVAS COLUMNAS PARA EL USO DE LOS GANADORES DE LOS PARTIDOS ---
