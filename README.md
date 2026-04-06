@@ -1,4 +1,4 @@
-# Análisis Descriptivo del Ranking ATP como Indicador de Éxito en el Tenis de Élite (2015-2025).	:tennis:
+# Análisis Descriptivo del Ranking ATP como Indicador de Éxito en el Tenis de Élite (2015-2025).
 ## 1. Planteamiento del problema
 En el tenis profesional, el ranking ATP es la métrica oficial que mide el éxito y el desempeño de los jugadores. Este sistema no solo determina quiénes son los mejores del mundo, sino que también condiciona la participación en torneos, la asignación de cabezas de serie y las expectativas del público. Ser parte del top 50 no solo garantiza notoriedad en el tenis, sino que te ofrece otros beneficios como el acceso a torneos de mayor categoría, una exposición constante a diferentes superficies y prestigio en la carrera deportiva.
 ***
