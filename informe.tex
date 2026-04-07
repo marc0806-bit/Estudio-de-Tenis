@@ -254,7 +254,7 @@ de juego.
 El presente trabajo de investigación se sustenta en una base de datos
 históricos del ATP tour, que abarca una serie de registros de más de dos
 décadas. El periodo de referencia definido para el análisis comprende
-desde el 1 de enero de 2000 hasta el primer trimestre de 2026 .
+desde el 1 de enero de 2000 hasta el primer trimestre de 2026.
 
 \section{Variables}
 
@@ -273,20 +273,103 @@ explicativas o independientes se analizan:
 
 \section{Bases Teóricas}
 
-Resumen de las bases teoricas explicadas en el capitulo y su
-importancia\\
+El presente capítulo establece los fundamentos matemáticos y
+estadísticos necesarios para el análisis de los datos del historial de
+partidos del ATP Tour. De igual forma, se abordan las definiciones del
+sistema de clasificación, la categorización de los torneos y los
+factores externos que influyen en la consistencia de los resultados
+deportivos.\\
 
-\subsection{Definición 1}
+\subsection{El sistema de clasificación de la ATP}
 
-Descripción de la definición 1\\
+El ranking de la Asociación de Tenistas Profesionales (ATP) es la
+herramienta objetiva utilizada para determinar la jerarquía de los
+jugadores y su acceso a los torneos. Se basa en un sistema de méritos
+acumulativos durante un período de 52 semanas, el cual suma los mejores
+19 resultados de un jugador determinado en dicho período
 
-\subsection{Definición 2}
+\begin{itemize}
+\item \textbf{Puntos de mérito:}Los jugadores acumulan puntos según la ronda alcanzada y la importancia del torneo.
+\end{itemize}
 
-Descripción de la definición 2\\
+\subsection{Categorización de torneos y estructura de puntos}
 
-\subsection{Definición n}
+El circuito profesional se divide en distintas Series, las cuales
+definen la cantidad de puntos en disputa y el nivel de competitividad.\\
 
-Descripción de la definición n\\
+\textbf{1.} Grand Slams: Los cuatro torneos de mayor prestigio (Abierto
+de Australia, Roland Garros, Wimbledon y US Open), que otorgan 2000
+puntos al ganador.\\
+
+\textbf{2.} ATP Masters 1000: Nueve torneos anuales que representan el
+segundo nivel de importancia.\\
+
+\textbf {3.} ATP 500 y 250: Torneos de menor escala que sirven para la
+rotación y acumulación de puntos de jugadores en diversos rangos del
+ranking.\\
+
+\subsection{ Factores del entorno en el rendimiento competitivo}
+
+\begin{itemize}
+\item
+  Superficie (Surface): Es el tipo de pista en la cual se lleva a cabo
+  el juego, hay 3 tipos de pista: Arcilla (Clay), Césped (Grass) y Pista
+  Dura (Hard). Cada una de ellas determina una dinámica distinta de
+  juego ya que cambian la altura, y velocidad de la pelota, así como el
+  deslizamiento del jugador. La estadística deportiva demuestra que en
+  el tenis existen jugadores ``especialistas'' cuyo rendimiento varía
+  significativamente según el suelo, independientemente de su ranking
+  general.\\
+\item
+  Rondas (Round): A medida que un torneo progresa, el nivel de
+  resistencia del oponente aumenta. Estadísticamente, se espera que la
+  desviación estándar del ranking de los ganadores merme conforme se
+  avanza hacia las rondas finales.\\
+\end{itemize}
+
+\subsection{Análisis exploratorio de datos}
+
+En virtud de que la presente investigación tiene un enfoque descriptivo,
+un Análisis Exploratorio de datos (EDA) permite identificar patrones,
+detectar valores atípicos y resumir las características principales del
+estudio.\\
+
+Matemáticamente Sea\(X\) una variable que representa el ranking del
+ganador e \(Y\) una variable que representa el ranking del perdedor,
+entonces:\\
+
+\begin{itemize}
+\item \textbf{Media muestral}
+\end{itemize}
+
+\[\bar{x}=\frac{\sum_{i=1}^{n} x_i}{n} \vee_{}^{} \bar{y}=\frac{\sum_{i=1}^{n} y_i}{n}\]
+
+\begin{itemize}
+ \item \textbf{Varianza(desvíos con respecto a la media)}: Indica la desviación promedio del ranking de los ganadores o perdedores con respecto a su media.
+\end{itemize}
+
+\[S^2_x=\frac{\sum_{i=1}^{n}(x_i- \bar{x})^2} {n-1} \vee S^2_y=\frac{\sum_{i=1}^{n}(y_i- \bar{y} )^2} {n-1}\]
+
+\begin{itemize}
+  \item \textbf{Tasa de victorias}
+\end{itemize}
+
+\[T.V= \frac {P.G}{P.J}*100\%\] Donde,
+
+\begin{itemize}
+\item P.G representa al número de partidos en los que el jugador resultó ganador en una temporada.
+\item P.J representa el numéro total de partidos que disputo el jugador en la temporada.
+\end{itemize}
+
+\[\rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} = \frac{E[(X - \mu_X)(Y - \mu_Y)]}{\sigma_X \sigma_Y}\]
+En este estudio, tomaremos como la variable \(X\) al ranking promedio de
+un jugador en una temporada e \(Y\) representará la tasa de victorias de
+dicho jugador en la temporada.
+
+El coeficiente de correlación de Pearson permitirá determinar si el
+ranking de un jugador es un descriptor del éxito elcual,a priori, a
+medida de que aumenta su ranking, se espera que también lo haga su tasa
+de victorias.
 
 \chapter{Marco Metódico}
 
