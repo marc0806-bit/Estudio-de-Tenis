@@ -2,8 +2,6 @@
 \documentclass[oneside,11pt]{Latex/Classes/PhDthesisPSnPDF}
 
 % --- Paquetes Originales ---
-\usepackage{blindtext}
-\usepackage{actuarialangle} 
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{multirow, array}
@@ -41,9 +39,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                         DATOS (Conectados a RMarkdown)                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Título del Trabajo Final}
-\author{Primer participante \\ Segundo participante \\ Tercer
-participante}
+\title{Análisis Descriptivo del Ranking ATP como Indicador de Éxito en
+el Tenis de Élite (2016-2025)}
+\author{Andrés Ortega \\ Marco Ramirez}
 
 % Lógica para Facultad: Si la defines en el YAML la usa, si no, usa la default
 
@@ -53,7 +51,7 @@ Estadistica y Ciencias Actuariales}
 
 \degree{Computación I}
 \director{Jesus Ochoa \\ Oliver Triveño}
-\degreedate{Febrero 2026} 
+\degreedate{Abril 2026} 
 \lugar{Caracas}
 
 \portadatrue 
@@ -98,8 +96,16 @@ Estadistica y Ciencias Actuariales}
   \chapter*{Resumen}     % Crea el título "Resumen" sin numeración (Capítulo *)
   \addcontentsline{toc}{chapter}{Resumen} % (Opcional) Lo añade al índice
   
-  Resumen del trabajo de
-investigación\ldots{}             % Aquí se pega el texto que escribiste en el YAML
+  En el presente informe se realizará un análisis exploratorio de datos
+basado en un histórico de 10 temporadas entre 2016-2025 del Top 50 en el
+circuito ATP del tenis profesional, el Ranking ATP es la métrica clave
+para evaluar el desempeño profesional de un jugador, pero, existen otros
+variables como el tipo de superficie, la categoría de la competición y
+el avance de rondas en un torneo, que hacen que esta confiable métrica
+no siempre sea tan representativa. De acuerdo con lo anteriormente
+expuesto, se examinará por medio de estadísticas descriptivas como el
+ranking ATP fluctúa dependiendo del contexto en el que se desarrolle la
+competencia.             % Aquí se pega el texto que escribiste en el YAML
   
   \cleardoublepage
 
@@ -112,73 +118,156 @@ investigación\ldots{}             % Aquí se pega el texto que escribiste en el
 % --- CAMBIO CRÍTICO 2: Aquí RMarkdown inyecta todo tu texto ---
 \chapter*{Introducción}
 
-Introducción del trabajo de investigación
+En el área del deporte profesional, la recopilación y análisis de datos
+históricos es una tarea fundamental para generar estadísticas
+descriptivas que permitan recopilar información relevante del
+rendimiento de un jugador o equipo. A diferencia de los deportes jugados
+en equipo dónde las estadísticas pueden llegar a atenuarse por el
+desempeño grupal, en el caso del tenis, debido a su estructura de
+competición individual (single), cada dato (puntos obtenidos, ranking,
+cantidad de sets jugados) manifiesta el desempeño individual de cada
+atleta. A menudo, se asume que el ranking de un jugador en un partido es
+una métrica clave la cual expresa cual es la tendencia de quien pueda
+llegar a ser el ganador, sin embargo, existen otras variables (ronda del
+torneo, superficie de la cancha, tipo de serie) las cuales pueden llegar
+a influir en el desempeño de jugadores y dejan un lado al ranking ATP
+como factor determinante.
+
+Por lo tanto, este estudio busca responder la siguiente pregunta: ¿Es el
+ranking de un jugador una métrica suficiente para reflejar lo que
+sucederá en cancha?
 
 \chapter{Planteamiento del Problema}
 
-Describir planteamiento del problema\\
+En el tenis profesional, el ranking ATP es la métrica oficial que mide
+el éxito y el desempeño de los jugadores. Este sistema no solo determina
+quiénes son los mejores del mundo, sino que también condiciona la
+participación en torneos, la asignación de cabezas de serie y las
+expectativas del público. Ser parte del top 50 no solo garantiza
+notoriedad en el tenis, sino que te ofrece otros beneficios como el
+acceso a torneos de mayor categoría, una exposición constante a
+diferentes superficies y prestigio en la carrera deportiva.
+
+Ahora bien, ¿Es el ranking ATP una métrica suficiente para comparar a
+dos jugadores que compiten en cancha? Además, ¿En qué superficie el
+ranking ATP es más representativo? En el presente trabajo describiremos
+cómo se comportan los jugadores del top 50 en diferentes superficies,
+rondas y torneos en un histórico comprendido entre 2016-2025 en la época
+dorada del tenis.\\
 
 Argumento final. Debido a esto, se plantea las siguientes preguntas de
 investigación:\\
 
-\textbf{1.} Pregunta1\\
+\textbf{1.} ¿Cómo se comporta el ranking de los ganadores y perdedores
+en el ATP tour?\\
 
-\textbf{2.} Pregunta2\\
+\textbf{2.} ¿En qué torneos se enfocan los jugadores con rankings más
+altos y más bajos?\\
 
-\textbf{3.} Pregunta3\\
+\textbf{3.} ¿Cúal es el ranking promedio predominante en las finales de
+los torneos más importantes?\\
 
 \section{Justificación}
 
-Justificación del trabajo de investigación\\
+La justificación del presente trabajo se sustenta en evaluar la robustez
+del Ranking ATP como un descriptor del desempeño real en el tenis
+profesional.
+
+En el ámbito deportivo, el ranking de un jugador es una métrica
+acumulativa de resultados pasados \hspace{0pt}\hspace{0pt}que definen su
+estatus en el circuito. Esta investigación busca que por medio de la
+estadística descriptiva identificar los patrones de distribución de los
+ganadores y perdedores. Para ello, se tomará como universo en estudio a
+los partidos de 10 temporadas consecutivas en el período entre 2016-2025
+de ambos atletas pertenecientes al top 50, este segmentación se realiza
+producto a que estos atletas tienen acceso directo a los Grand Slam,
+Masters 1000 y a una gran parte de los torneos ATP 500 y ATP 250.
+
+En el ámbito académico, este trabajo se inserta en la formación de la
+Escuela de Estadística y Ciencias Actuariales, demostrando la capacidad
+del lenguaje de programación R para el manejo de grandes volúmenes de
+datos y la generación de reportes dinámicos mientras que el entorno de
+Python permite generar reportes interactivos para la visualización e
+interpretación de los mismos.\\
 
 \section{Objetivos}
 
 \subsection{Objetivo General}
 \begin{itemize}
-  \item{Describir objetivo general del trabajo de investigación}
+  \item{Determinar si existe una relación entre el posicionamiento en el ranking ATP y el desempeño competitivo de los jugadores para evaluar su rendimiento en los partidos según superficie, torneo y ronda en los atletas pertenecientes al Top 50 durante el periodo 2016-2025.}
 \end{itemize}
 
 \subsection{Objetivos Específicos}
 \begin{itemize}
-  \item{Describir objetivo 1 del trabajo de investigación}
-  \item{Describir objetivo 2 del trabajo de investigación}
-  \item{Describir objetivo 3 del trabajo de investigación}
+  \item{Comparar el desempeño de los ganadores y perdedores de los jugadores pertenecientes al top 50 en el período de análisis.}
+  \item{Analizar si la posición del ranking de los jugadores varía de manera sustancial de acuerdo a la superficie del partido jugado.}
+  \item{Verificar la eficiencia del ranking como pronosticador del éxito mediante el avance en las rondas.}
+  \item{Identificar si los jugadores con mejor posicionamiento (Top 10), concentran su participación en eventos con mayor prestigio.}
 \end{itemize}
 
 \section{Cobertura}
 
 \subsection{Horizontal}
 
-Describir la cobertura Horizontal del trabajo de investigación\\
+La cobertura horizontal se basa en cada uno de los partidos de tenis
+registrados en la base de datos. Se considera el momento, lugar y torneo
+en el cual se efectuaron los partidos, y el resultado de los mismos
+junto a ciertas características que describen los enfrentamientos.\\
 
 \begin{table}[ht]
 \centering
-\caption{Variables consideradas} 
-\resizebox{10cm}{!} {
-\begin{tabular}{ccc}
+\caption{Variables consideradas en el estudio} 
+\label{tab:variables}
+\renewcommand{\arraystretch}{1.4}%
+\begin{tabularx}{\textwidth}{llX} %
   \hline
-\ \ \ \ \ NOMBRE DE LA VARIABLE \\ 
+\textbf{TIPO} &\textbf{VARIABLE} &\textbf{DESCRIPCIÓN}\\ 
   \hline
-   VARIABLE 1 \\ 
-VARIABLE 2\\ 
-VARIABLE n\\ 
+Categórica & Tournament & Nombre oficial del torneo dónde se disputo el encuentro\\ 
+Numérica & Date & Fecha en la que se llevo a cabo el partido(Formato AAAA-MM-DD)\\
+Categórica & Series & Categoría o nivel del torneo\\
+Categórica & Surface & Tipo de suelo de la cancha: Duro (Hard), Arcilla (Clay) o Hierba (Grass)\\
+Categórica & Round & Etapa eliminatoria del torneo\\
+Categórica & Player\_1 & Nombre del primer jugador registrado en el encuentro\\
+Categórica & Player\_2 & Nombre del segundo jugador registrado en el encuentro\\
+Categórica & Winner & Nombre del jugador que resultó victorioso en el encuentro\\
+Numérica & Rank\_1 & Posición en el ranking ATP del Jugador 1 al iniciar el torneo\\
+Numérica & Rank\_2 & Posición en el ranking ATP del Jugador 2 al iniciar el torneo\\
+Numérica & Winnner\_Rank & Posición en el ranking ATP del ganador del partido\\
+Numérica & Loser\_Rank & Posición en el Ranking ATP del perdedor del partido\\
+Numérica & Tasa de Victorias & Porcentaje de victorias anuales de cada jugador por temporada\\ 
    \hline
-\end{tabular}
-}
+\end{tabularx}
 \end{table}
 
 \subsection{Vertical}
 
-Describir la cobertura Vertical del trabajo de investigación
+La cobertura vertical del trabajo de investigación comprende un total de
+66790 observaciones. Cada fila representa un partido único jugado en el
+ATP tour. El alcance temporal de los datos en longitudinal, abarcando
+desde el año 2000 hasta principios del 2026, lo que permite un análisis
+del desempeño de jugadores de diferentes épocas y con distintos estilos
+de juego.
 
 \section{Periodo de Referencia}
 
-Describir la fuente y el Periodo de Referencia utilizado en el trabajo
-de investigación
+El presente trabajo de investigación se sustenta en una base de datos
+históricos del ATP tour, que abarca una serie de registros de más de dos
+décadas. El periodo de referencia definido para el análisis comprende
+desde el 1 de enero de 2000 hasta el primer trimestre de 2026 .
 
 \section{Variables}
 
-Describir la variable en estudio en el trabajo de investigación
+Las dos variables principales en el estudio (Variables
+dependientes/objetivo) son Rank\_1 y Rank\_2, que representa el ranking
+ATP de un cada jugador en ese juego específico, como variables
+explicativas o independientes se analizan:
+
+\begin{enumerate}
+  \item Variables temporales: \textbf{Date}
+  \item Variables categóricas: \textbf{Tournament}, \textbf{Series}, \textbf{Surface}, \textbf{Round},             \textbf{Jugador\_1}, \textbf {Jugador\_2}, \textbf{Winner}
+  \item Variables numericas: \textbf{Winner\_Rank}, \textbf{Loser\_Rank}, \textbf{Tasa de victorias} 
+\end{enumerate}
 
 \chapter{Marco Teórico}
 
