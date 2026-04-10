@@ -1,6 +1,6 @@
 ---
 # --- Metadatos Básicos ---
-title: "Análisis Descriptivo del Ranking ATP como Indicador de Éxito en el Tenis de Élite (2016-2025)"
+title: "El Ranking ATP como Indicador de Éxito en el Tenis de Élite (2016-2025)"
 author:
    - Andrés Ortega
    - Marco Ramirez
@@ -56,34 +56,35 @@ library(scales)
 
 \chapter*{Introducción}
 
-En el área del deporte profesional, la recopilación y análisis de datos históricos es una tarea fundamental para generar estadísticas descriptivas que permitan recopilar información relevante del rendimiento de un jugador o equipo. A diferencia de los deportes jugados en equipo dónde las estadísticas pueden llegar a atenuarse por el desempeño grupal, en el caso del tenis, debido a su estructura de competición individual (single), cada dato (puntos obtenidos, ranking, cantidad de sets jugados) manifiesta el desempeño individual de cada atleta.  A menudo, se asume que el ranking de un jugador en un partido es una métrica clave la cual expresa cual es la tendencia de quien pueda llegar a ser el ganador, sin embargo, existen otras variables (ronda del torneo, superficie de la cancha, tipo de serie) las cuales pueden llegar a influir en el desempeño de jugadores y dejan un lado al ranking ATP como factor determinante.
+En el área del deporte profesional, la recopilación y análisis de datos históricos es una tarea fundamental para generar estadísticas descriptivas que permitan recopilar información relevante del rendimiento de un jugador o equipo. A diferencia de los deportes jugados en equipo dónde las estadísticas pueden llegar a atenuarse por el desempeño grupal, en el caso del tenis, debido a su estructura de competición individual (single), cada dato (puntos obtenidos, ranking, cantidad de sets jugados) manifiesta el desempeño individual de cada atleta.  A menudo, se asume que el ranking de un jugador en un partido es una métrica clave la cual expresa cual es la tendencia de quien pueda llegar a ser el ganador, sin embargo, existen otras variables (ronda del torneo, superficie de la cancha, tipo de serie) las cuales pueden llegar a influir en el desempeño de jugadores y dejan a un lado al Ranking ATP como factor determinante.\
 
 
 Por lo tanto, este estudio busca responder la siguiente pregunta: ¿Es el ranking de un jugador una métrica suficiente para reflejar lo que sucederá en cancha?
 
 \chapter{Planteamiento del Problema}
 
- En el tenis profesional, el ranking ATP es la métrica oficial que mide el éxito y el desempeño de los jugadores. Este sistema no solo determina quiénes son los mejores del mundo, sino que también condiciona la participación en torneos, la asignación de cabezas de serie y las expectativas del público. Ser parte del top 50 no solo garantiza notoriedad en el tenis, sino que te ofrece otros beneficios como el acceso a torneos de mayor categoría, una exposición constante a diferentes superficies y prestigio en la carrera deportiva.
+ En el tenis profesional, el ranking ATP es la métrica oficial que mide el éxito y el desempeño de los jugadores, tal como se explica en la guía técnica de Wilson (sf) el ranking ATP funciona como un barómetro de consistencia, donde cada torneo tiene un peso específico en la puntuación total del atleta. Este sistema no solo determina quiénes son los mejores del mundo, sino que también condiciona la participación en torneos, la asignación de cabezas de serie y las expectativas del público. Ser parte del top 50 no solo garantiza notoriedad en el tenis, sino que te ofrece otros beneficios como el acceso a torneos de mayor categoría, una exposición constante a diferentes superficies, mayores incentivos financieros y prestigio en la carrera deportiva, Association of Tennis Profesionals (ATP, 2026).\
 
-Ahora bien, ¿Es el ranking ATP una métrica suficiente para comparar a dos jugadores que compiten en cancha? Además, ¿En qué superficie el ranking ATP es más representativo? En el presente trabajo describiremos cómo se comportan los jugadores del top 50 en diferentes superficies, rondas y torneos en un histórico comprendido entre 2016-2025 en la época dorada del tenis.\
 
-Argumento final. Debido a esto, se plantea las siguientes preguntas de investigación:\
+Ahora bien, ¿Es el ranking ATP una métrica suficiente para comparar a dos jugadores que compiten en cancha? En el presente trabajo describiremos cómo se comportan los jugadores del top 50 en diferentes superficies, rondas y torneos en un histórico comprendido entre 2016-2025 en la época dorada del tenis.\
+
+Con respecto a lo anteriormente expuesto, se plantean las siguientes preguntas de investigación:\
 
 
 \textbf{1.}	¿Cómo se comporta el ranking de los ganadores y perdedores en el ATP tour?\
 
-\textbf{2.}	¿En qué torneos se enfocan los jugadores con rankings más altos y más bajos?\
+\textbf{2.} ¿En cúales superficies el ranking ATP es más representativo?\
 
-\textbf{3.}	¿Cúal es el ranking promedio predominante en las finales de los torneos más importantes?\
+\textbf{3.}	¿En qué torneos se enfocan los jugadores con rankings más altos y más bajos?\
+
+\textbf{4.}	¿Cúal es el ranking promedio predominante en las finales de los torneos más importantes?\
 
 
 \section{Justificación}
 
-La justificación del presente trabajo se sustenta en evaluar la robustez del Ranking ATP como un descriptor del desempeño real en el tenis profesional.
+La justificación del presente trabajo se sustenta en evaluar la robustez del Ranking ATP como un descriptor del desempeño real en el tenis profesional.\
 
-En el ámbito deportivo, el ranking de un jugador es una métrica acumulativa de resultados pasados ​​que definen su estatus en el circuito. Esta investigación busca que por medio de la estadística descriptiva identificar los patrones de distribución de los ganadores y perdedores. Para ello, se tomará como universo en estudio a los partidos de 10 temporadas consecutivas en el período entre 2016-2025 de ambos atletas pertenecientes al top 50, este segmentación se realiza producto a que estos atletas tienen acceso directo a los Grand Slam, Masters 1000 y a una gran parte de los torneos ATP 500 y ATP 250.
-
-En el ámbito académico, este trabajo se inserta en la formación de la Escuela de Estadística y Ciencias Actuariales, demostrando la capacidad del lenguaje de programación R para el manejo de grandes volúmenes de datos y la generación de reportes dinámicos mientras que el entorno de Python permite generar reportes interactivos para la visualización e interpretación de los mismos.
+En el ámbito deportivo, el ranking de un jugador es una métrica acumulativa de resultados pasados ​​que definen su estatus en el circuito. Esta investigación busca que por medio de la estadística descriptiva identificar los patrones de distribución de los ganadores y perdedores. Para ello, se tomará como universo en estudio a los partidos de 10 temporadas consecutivas en el período entre 2016-2025 de ambos atletas pertenecientes al top 50, este segmentación se realiza producto a que estos atletas tienen acceso directo a los Grand Slam, Masters 1000 y a una gran parte de los torneos ATP 500 y ATP 250 . Por otra parte, tienen prohibida la participación en eventos de menor categoría sin una carta de invitación (Association of Tennis Professionals, 2026, sec. 7.07), esto garantizá que el enfoque de este estudio se base en el circuito de élite del tenis.
 \
 
 \section{Objetivos}
@@ -145,7 +146,7 @@ El presente trabajo de investigación se sustenta en una base de datos históric
 
 \section{Variables}
 
-Las dos variables principales en el estudio (Variables dependientes/objetivo) son Rank_1 y Rank_2, que representa el ranking ATP de un cada jugador en ese juego específico, como variables explicativas o independientes se analizan:
+Las dos variables principales en el estudio (Variables dependientes/objetivo) son Rank_1 y Rank_2, que representa el ranking ATP de cada jugador en ese juego específico, como variables explicativas o independientes se analizan:
 \begin{enumerate}
   \item Variables temporales: \textbf{Date}
   \item Variables categóricas: \textbf{Tournament}, \textbf{Series}, \textbf{Surface}, \textbf{Round},             \textbf{Jugador\_1}, \textbf {Jugador\_2}, \textbf{Winner}
@@ -161,7 +162,7 @@ El presente capítulo establece los fundamentos matemáticos y estadísticos nec
 
 \subsection{El sistema de clasificación de la ATP}
 
-El ranking de la Asociación de Tenistas Profesionales (ATP) es la herramienta objetiva utilizada para determinar la jerarquía de los jugadores y su acceso a los torneos. Se basa en un sistema de méritos acumulativos durante un período de 52 semanas, el cual suma los mejores 19 resultados de un jugador determinado en dicho período
+El ranking de la Asociación de Tenistas Profesionales (ATP) es la herramienta objetiva utilizada para determinar la jerarquía de los jugadores y su acceso a los torneos. Se basa en un sistema de méritos acumulativos durante un período de 52 semanas, el cual suma los mejores 19 resultados de un jugador determinado en dicho período (Wilson, sf).
 \begin{itemize}
 \item \textbf{Puntos de mérito:}Los jugadores acumulan puntos según la ronda alcanzada y la importancia del torneo.
 \end{itemize}
@@ -201,7 +202,7 @@ $$\bar{x}=\frac{\sum_{i=1}^{n} x_i}{n} \vee_{}^{} \bar{y}=\frac{\sum_{i=1}^{n} y
 \end{itemize}
 
 $$S^2_x=\frac{\sum_{i=1}^{n}(x_i- \bar{x})^2} {n-1} \vee S^2_y=\frac{\sum_{i=1}^{n}(y_i- \bar{y} )^2} {n-1}$$
-
+\newpage
 \begin{itemize}
   \item \textbf{Tasa de victorias}
 \end{itemize}
@@ -211,6 +212,11 @@ Donde,
 \begin{itemize}
 \item P.G representa al número de partidos en los que el jugador resultó ganador en una temporada.
 \item P.J representa el numéro total de partidos que disputo el jugador en la temporada.
+\end{itemize}
+\
+
+\begin{itemize}
+\item \textbf{Coeficiente de correlación de Pearson}
 \end{itemize}
 
 $$\rho_{X,Y} = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} = \frac{E[(X - \mu_X)(Y - \mu_Y)]}{\sigma_X \sigma_Y}$$
@@ -224,7 +230,7 @@ En esta sección se presentan las metodologías y/o test necesarios relacionados
  
 \section{Bases metódicas utilizadas en el trabajo de investigación}
 
-Desarrollo\
+En esta sección se presentan las metodologías 
 
 \subsection{Item 1}
 

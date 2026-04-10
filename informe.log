@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.5)  7 APR 2026 18:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.5)  9 APR 2026 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -748,7 +748,7 @@ Overfull \vbox (267.69385pt too high) detected at line 74
  []
 
 
-Overfull \vbox (249.17479pt too high) detected at line 74
+Overfull \vbox (235.57478pt too high) detected at line 74
  []
 
 [1
@@ -768,7 +768,7 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...numberline {A}Anexo A}{13}{appendix.Alph1}
+l.30 ...numberline {A}Anexo A}{12}{appendix.Alph1}
                                                   % [1
 
 
@@ -784,19 +784,24 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 
 
 
-] [1
+]
+Underfull \hbox (badness 10000) in paragraph at lines 121--135
+
+ []
+
+[1
 
 
 
 ]
 Cap\'{\i }tulo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--157
+Underfull \hbox (badness 10000) in paragraph at lines 142--154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 155--160
 
  []
 
@@ -815,146 +820,138 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--169
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--181
+
+ []
+
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 186--192
+Underfull \hbox (badness 10000) in paragraph at lines 182--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--216
+Underfull \hbox (badness 10000) in paragraph at lines 215--219
 
  []
 
-LaTeX Info: Redefining \. on input line 216.
-LaTeX Info: Redefining \% on input line 216.
+LaTeX Info: Redefining \. on input line 219.
+LaTeX Info: Redefining \% on input line 219.
 [3]
 
-LaTeX Warning: Float too large for page by 40.0828pt on input line 241.
+LaTeX Warning: Float too large for page by 40.0828pt on input line 244.
 
-LaTeX Info: Redefining \. on input line 272.
-LaTeX Info: Redefining \% on input line 272.
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
 [4]
-LaTeX Info: Redefining \. on input line 272.
-LaTeX Info: Redefining \% on input line 272.
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
 [5]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--282
+Underfull \hbox (badness 10000) in paragraph at lines 279--285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--299
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--303
+Underfull \hbox (badness 10000) in paragraph at lines 303--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
 
  []
 
 [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 315--324
+Underfull \hbox (badness 10000) in paragraph at lines 310--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--328
+Underfull \hbox (badness 10000) in paragraph at lines 318--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--336
+Underfull \hbox (badness 10000) in paragraph at lines 327--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--340
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
 
  []
 
-LaTeX Info: Redefining \. on input line 361.
-LaTeX Info: Redefining \% on input line 361.
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--343
+
+ []
+
+LaTeX Info: Redefining \. on input line 355.
+LaTeX Info: Redefining \% on input line 355.
 [7]
-LaTeX Info: Redefining \. on input line 374.
-LaTeX Info: Redefining \% on input line 374.
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+LaTeX Info: Redefining \. on input line 384.
+LaTeX Info: Redefining \% on input line 384.
 [8]
 Cap\'{\i }tulo 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
 [9
 
 ]
-LaTeX Info: Redefining \. on input line 400.
-LaTeX Info: Redefining \% on input line 400.
-[10]
 Cap\'{\i }tulo 4.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 402.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 412.
 (c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 402.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 412.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 405.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 415.
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
-
- []
-
-[11
-
-]
-Cap\'{\i }tulo 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
@@ -964,39 +961,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--424
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
  []
 
+[10
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
-
- []
-
+]
+Cap\'{\i }tulo 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 431--432
 
  []
 
-[12
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+[11
 
 ]
 Ap\'{e}ndice A.
-[13
+[12
 
 ]
 Ap\'{e}ndice B.
-[14
+[13
 
 ]
 Ap\'{e}ndice C.
 No file informe.bbl.
-[15
+[14
 
 ] (./informe.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -1013,18 +1029,18 @@ Package rerunfilecheck Info: File `informe.out' has not changed.
 (rerunfilecheck)             Checksum: F6615A5F263996F0E29E542FEE0200AF;5612.
  ) 
 Here is how much of TeX's memory you used:
- 20060 strings out of 469321
- 337456 string characters out of 5463933
+ 20061 strings out of 469321
+ 337477 string characters out of 5463933
  815211 words of memory out of 5000000
- 48528 multiletter control sequences out of 15000+600000
+ 48530 multiletter control sequences out of 15000+600000
  636518 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  105i,12n,107p,433b,815s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/andre/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on informe.pdf (19 pages, 445787 bytes).
+Output written on informe.pdf (18 pages, 445881 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 323 PDF objects out of 1000 (max. 8388607)
+ 273 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  259 words of extra memory for PDF output out of 10000 (max. 10000000)
 
