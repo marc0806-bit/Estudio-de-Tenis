@@ -115,13 +115,12 @@ plt.tight_layout()
 plt.show()
 
 
-
 # realizamos un gráfico de torta para mostrar la proporción de partidos por categoría de torneo, para ver si hay una concentración de partidos en ciertas categorías
 
 # Contamos cuántos partidos hay por cada categoría (Series)
 conteo_total = df['Series'].value_counts()
 
-# Definimos los colores (usando una paleta coherente con tu gráfico de densidad)
+# Definimos los colores (usando una paleta coherente con el gráfico de densidad)
 colores_pro = sns.color_palette("viridis", len(conteo_total))
 
 plt.figure(figsize=(10, 7))
@@ -132,7 +131,7 @@ plt.pie(conteo_total,
         autopct='%1.1f%%', 
         startangle=140, 
         colors=colores_pro,
-        explode=[0.05] * len(conteo_total), # Separa un poco todas las tajadas
+        explode=[0.05] * len(conteo_total), # Separa un poco cada porción para mejorar la visualización
         pctdistance=0.85)
 
 # Añadimos un círculo blanco en el centro para convertirlo en un gráfico de Donut (disnto del gráfico de torta tradicional)
@@ -148,8 +147,6 @@ plt.show()
 # Mostramos los números brutos para referencia
 print("Cantidad de partidos analizados por categoría:")
 print(conteo_total)
-
-
 
 
 #realizamos ahora un gráfico de densidad para mostrar la concentración de los ganadores según su ranking, separado por categoría de torneo
@@ -170,7 +167,6 @@ plt.ylabel('Densidad (Concentración de victorias)')
 plt.show()
 
 
-
 #Calculamos victorias y derrotas totales
 ganados_50 = df['Winner'].value_counts().head(50)
 
@@ -189,4 +185,3 @@ plt.tight_layout()
 plt.show()
 print("LISTADO COMPLETO TOP 50 GANADORES:")
 print(ganados_50)
-
