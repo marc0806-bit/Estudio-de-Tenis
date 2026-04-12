@@ -1,9 +1,8 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import streamlit as st
-import seaborn as sns
 import plotly.express as px
+import plotly.figure_factory as ff  
+import streamlit as st
 import os
 
 #CONFIGURACIÓN DE LA PÁGINA
@@ -71,7 +70,7 @@ with tab1:
     st.divider()
 
     # DATOS ESTADÍSTICOS CON UNIDADES
-    st.subheader("📊 3. Estadísticos: Winner vs Loser")
+    st.subheader("📊 Estadísticos: Winner vs Loser")
     
     columnas_finales = ['winner_rank', 'loser_rank']
     
@@ -114,7 +113,65 @@ with tab1:
 with tab2:
     st.header("📊 Comparación de Promedios")
     st.write("Contenido para la comparación de promedios aquí...")
-    
+
+    #Filtro de categorías
+    categorias_seleccionadas = st.multiselect(
+        "Selecciona las categorías para visualizar:",
+        options=['Grand Slam', 'Masters 1000', 'ATP500', 'ATP250'],
+        default=['Grand Slam', 'ATP250']
+    )
+
+    if categorias_seleccionadas:
+        import plotly.figure_factory as ff
+        
+        # Definición de la Paleta (Jerárquica)
+        colores_map = {
+            'Grand Slam': 'royalblue',   
+    'Masters 1000': 'firebrick', 
+    'ATP500': 'goldenrod',       
+    'ATP250': 'seagreen'      
+        }
+        
+        # Preparamos los datos
+        hist_data = [df[df['Series'] == cat]['winner_rank'].dropna() for cat in categorias_seleccionadas]
+        colores = [colores_map[cat] for cat in categorias_seleccionadas]
+
+        #Creación del gráfico interactivo
+        fig_densidad = ff.create_distplot(
+            hist_data, 
+            categorias_seleccionadas, 
+            show_hist=False, 
+            show_rug=False,
+            colors=colores
+        )
+
+        fig_densidad.update_layout(
+            title="Densidad de Ganadores: Concentración de Talento",
+            xaxis_title="Ranking del Ganador (1 = Mejor)",
+            yaxis_title="Densidad (Probabilidad de victoria)",
+            template="plotly_white",
+            xaxis=dict(range=[1, 50]),
+            legend_title="Torneos"
+        )
+
+        st.plotly_chart(fig_densidad, use_container_width=True)
+
+        #Interpretación
+        st.markdown("### 📝 ¿Qué estamos viendo?")
+        
+        st.write("""
+            La **altura de la curva** indica qué tan frecuente es encontrar un ganador en ese ranking específico. 
+            Como usamos tonos verdes, la regla para la defensa es:
+        """)
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            st.success("**Azul Oscuro (Grand Slam):** Curva muy alta y cerrada. El éxito está atrapado en el Top 10.")
+        with col2:
+            st.info("**Verde oscuro (ATP 250):** Curva baja y extendida. Hay más espacio para las sorpresas.")
+
+    else:
+        st.warning("Selecciona al menos una categoría para generar el análisis.")
 with tab3:
     st.header("💻 Distribución de Rankings")
     st.write("Contenido para la distribución aquí")
@@ -174,7 +231,7 @@ with tab4:
                 x='Año', 
                 y='Cant. Victorias',
                 markers=True,
-                color_discrete_sequence=['#00CC96']
+                color_discrete_sequence=['royalblue']
             )
             st.plotly_chart(fig_evolucion, use_container_width=True)
         else:
