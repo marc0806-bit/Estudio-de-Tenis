@@ -117,6 +117,7 @@ with tab1:
 
 #PESTAÑA 2: COMPARACIÓN DE SERIES (DENSIDAD)
 with tab2:
+   
     st.header("🎾 Densidad de Ganadores: ¿Dónde se concentra el talento?")
     
     # Segmentación de datos por tipo de torneo
@@ -130,15 +131,21 @@ with tab2:
     hist_data = [v for v in series_atp.values() if not v.empty]
     group_labels = [k for k, v in series_atp.items() if not v.empty]
     
-    # Gráfico de Distplot (Curvas de densidad KDE)
     if hist_data:
         fig_densidad = ff.create_distplot(hist_data, group_labels, show_hist=False, colors=['green', 'blue', 'red', 'orange'][:len(group_labels)])
         fig_densidad.update_layout(xaxis_title='Ranking', yaxis_title='Densidad', template='plotly_white', xaxis=dict(range=[1, 50]))
-        st.plotly_chart(fig_densidad, width='stretch')
+        st.plotly_chart(fig_densidad, use_container_width=True)
 
+    st.divider()
+
+    st.markdown("### 📌 Conclusión: La élite se concentra en los Grand Slams, pero los Masters 1000 también muestran una alta densidad de talento. ATP500 y ATP250 tienen una distribución más dispersa.")
 # PESTAÑA 3: DISTRIBUCIÓN DE ÉLITE (BOXPLOTS)
+
 with tab3:
     st.header("💻 Nivel de Élite: Rondas Finales")
+    
+    # 1. Cambio de nombre antes de procesar para que aparezca "Roland Garros" en la leyenda
+    df['Tournament'] = df['Tournament'].replace('French Open', 'Roland Garros')
     
     # Cálculo del nivel de jerarquía del partido (Promedio de ambos jugadores)
     df['rank_medio'] = (df['winner_rank'] + df['loser_rank']) / 2
@@ -152,15 +159,21 @@ with tab3:
 
     if not df_cat.empty:
         # Burbujas: Tamaño = Cantidad de partidos, Eje Y = Ranking promedio
-        df_agrupado = df_cat.groupby(['Tournament', 'Round']).agg(promedio_rank=('rank_medio', 'mean'), num_partidos=('rank_medio', 'count')).reset_index()
+        df_agrupado = df_cat.groupby(['Tournament', 'Round']).agg(
+            promedio_rank=('rank_medio', 'mean'), 
+            num_partidos=('rank_medio', 'count')
+        ).reset_index()
 
         fig_burbuja = px.scatter(
             df_agrupado, x="Round", y="promedio_rank", size="num_partidos",
             color="Tournament", category_orders={"Round": rondas_clave},
-            template="plotly_dark", size_max=30, title=f"Concentración de Élite en {cat}"
+            template="plotly_dark", size_max=30, 
+            title=f"Concentración de Élite en {cat}"
         )
-        fig_burbuja.update_yaxes(autorange="reversed") # Invertimos eje Y (1 es mejor que 50)
-        st.plotly_chart(fig_burbuja, width='stretch')
+        
+        # Invertimos eje Y (1 es mejor que 50)
+        fig_burbuja.update_yaxes(autorange="reversed") 
+        st.plotly_chart(fig_burbuja, use_container_width=True)
 
         st.divider()
 
@@ -176,17 +189,23 @@ with tab3:
         color_map = {'Clay': 'red', 'Grass': 'lightgreen', 'Hard': 'lightblue', 'Carpet': 'orange'}
 
         # Lógica boxplot
-        fig_box = px.box(df_cat, x="Surface", y="rank_medio", color="Surface", points=False, color_discrete_map=color_map, template="plotly_dark")
+        fig_box = px.box(
+            df_cat, x="Surface", y="rank_medio", color="Surface", 
+            points=False, color_discrete_map=color_map, template="plotly_dark"
+        )
         
-        # Si se selecciona jugador, se añade una capa de puntos (Scatter)
+        # Si se selecciona jugador, se añade una capa de puntos 
         if jugador_foco != "Mostrar Solo Cajas (Limpio)":
             df_solo_jugador = df_cat[df_cat['Winner'] == jugador_foco]
             fig_box.add_trace(px.scatter(df_solo_jugador, x="Surface", y="rank_medio").data[0])
             # Formato de los puntos: Círculos blancos
-            fig_box.update_traces(marker=dict(size=12, symbol="circle", line=dict(width=2, color="white")), selector=dict(type='scatter'))
+            fig_box.update_traces(
+                marker=dict(size=12, symbol="circle", line=dict(width=2, color="white")), 
+                selector=dict(type='scatter')
+            )
 
         fig_box.update_layout(yaxis=dict(autorange="reversed", title="Ranking ATP"), showlegend=False)
-        st.plotly_chart(fig_box, width='stretch')
+        st.plotly_chart(fig_box, use_container_width=True)
 
         # Interpretación basada en el rendimiento del jugador seleccionado
         if jugador_foco != "Mostrar Solo Cajas (Limpio)":
@@ -204,31 +223,67 @@ with tab3:
 
 # PESTAÑA 4: ESTADÍSTICAS POR JUGADOR 
 with tab4:
+
     st.header("🏆 Top 50 Jugadores con más Victorias (2016-2025)")
     
     # Conteo de victorias globales
     top_vics = df['Winner'].value_counts().head(50).reset_index()
     top_vics.columns = ['Jugador', 'Victorias']
 
-    # Gráfico de barras
-    fig_global = px.bar(top_vics, x='Jugador', y='Victorias', color='Victorias', color_continuous_scale='Blues', template='plotly_white')
+    # Gráfico de barras global
+    fig_global = px.bar(
+        top_vics, x='Jugador', y='Victorias', 
+        color='Victorias', color_continuous_scale='Blues', 
+        template='plotly_dark' 
+    )
     fig_global.update_layout(xaxis_tickangle=-45)
-    st.plotly_chart(fig_global, width='stretch')
+    st.plotly_chart(fig_global, use_container_width=True)
 
     st.divider() 
     
-    # Buscador individual de evolución
+    # 2. Buscador individual de evolución
     st.header("🏆 Consulta de Victorias Individual")
+
+    # Corrección de nombres repetidos
+    # Limpiamos espacios en blanco y extraemos valores únicos de forma segura
+    df['Winner'] = df['Winner'].str.strip() 
     lista_jugadores_v = sorted(df['Winner'].dropna().unique())
-    jugador_sel = st.selectbox("Selecciona un jugador:", options=lista_jugadores_v, key="jugador_tab4")
+   
+
+    jugador_sel = st.selectbox(
+        "Selecciona un jugador:", 
+        options=lista_jugadores_v, 
+        key="jugador_tab4"
+    )
 
     if jugador_sel:
+        # Filtrado de datos del jugador
         df_j = df[df['Winner'] == jugador_sel].copy()
+        
+        # Métricas principales
         c1, c2 = st.columns(2)
         c1.metric("Victorias Totales", len(df_j))
-        c2.metric("Ranking Promedio", round(df_j['winner_rank'].mean(), 1))
+        
+        # Verificamos si hay datos de ranking para evitar errores de cálculo
+        if not df_j['winner_rank'].dropna().empty:
+            rank_prom = round(df_j['winner_rank'].mean(), 1)
+            c2.metric("Ranking Promedio", f"{rank_prom}°")
+        else:
+            c2.metric("Ranking Promedio", "N/A")
         
         # Línea de tiempo de victorias por año
+        # Aseguramos que la fecha sea datetime para el agrupamiento
+        df_j['Date'] = pd.to_datetime(df_j['Date'])
         vict_anuales = df_j.groupby(df_j['Date'].dt.year).size().reset_index(name='Vics')
-        fig_ev = px.line(vict_anuales, x='Date', y='Vics', markers=True, title=f"Evolución: {jugador_sel}", color_discrete_sequence=['lightgreen'])
-        st.plotly_chart(fig_ev, width='stretch')
+        
+        fig_ev = px.line(
+            vict_anuales, x='Date', y='Vics', 
+            markers=True, 
+            title=f"Evolución de Victorias: {jugador_sel}", 
+            color_discrete_sequence=['green'], 
+            template='plotly_dark'
+        )
+        
+        # Ajustes estéticos al gráfico de línea
+        fig_ev.update_layout(xaxis_title="Año", yaxis_title="Cantidad de Victorias")
+        st.plotly_chart(fig_ev, use_container_width=True)
