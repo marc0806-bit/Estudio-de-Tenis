@@ -97,7 +97,7 @@ En el ámbito deportivo, el ranking de un jugador es una métrica acumulativa de
 \subsection{Objetivos Específicos}
 \begin{itemize}
   \item{Comparar el desempeño de los ganadores y perdedores de los jugadores pertenecientes al top 50 en el período de análisis.}
-  \item{Analizar si la posición del ranking de los jugadores varía de manera sustancial de acuerdo a la superficie del partido jugado.}
+  \item{Analizar si la posición del ranking de los ganadores varía de manera sustancial de acuerdo a la superficie del partido jugado.}
   \item{Verificar la eficiencia del ranking como pronosticador del éxito mediante el avance en las rondas y como se distribuye el ranking de los jugadores en las últimas rondas.}
   \item{Identificar si los jugadores con mejor posicionamiento (Top 10), concentran su participación en eventos con mayor prestigio.}
 \end{itemize}
@@ -164,8 +164,8 @@ El presente capítulo establece los fundamentos matemáticos y estadísticos nec
   La asociación de tenistas profesionales es la principal organización que se encarga de dirigir el circuito profesional de tenis masculino a nivel mundial.\
 
 \begin{itemize}
-\item \textbf{Ranking PIF (Ranking ATP):}El ranking de la Asociación de Tenistas Profesionales es la herramienta objetiva utilizada para determinar la jerarquía de los jugadores y su acceso a los torneos. Se basa en un sistema de méritos acumulativos durante un período de 52 semanas, el cual suma los mejores 19 resultados de un jugador determinado en dicho período (Wilson, sf).
-\item \textbf{Puntos de mérito:}Los jugadores acumulan puntos según la ronda alcanzada y la importancia del torneo.
+\item \textbf{Ranking PIF (Ranking ATP):} El ranking de la Asociación de Tenistas Profesionales es la herramienta objetiva utilizada para determinar la jerarquía de los jugadores y su acceso a los torneos. Se basa en un sistema de méritos acumulativos durante un período de 52 semanas, el cual suma los mejores 19 resultados de un jugador determinado en dicho período (Wilson, sf).
+\item \textbf{Puntos de mérito:} Los jugadores acumulan puntos según la ronda alcanzada y la importancia del torneo.
 
 \end{itemize}
 
@@ -179,22 +179,33 @@ El circuito profesional se divide en distintas series de torneos, las cuales def
 
 \textbf {3.} ATP 500 y 250: Torneos de menor escala que sirven para la rotación y acumulación de puntos de jugadores en diversos rangos del ranking.\
 
+\textbf{4.} Masters Cup (Nitto ATP finals): Es el torneo de cierre de temporada del tenis masculino, dónde solamente participan los 8 mejores jugadores de la temporada. Este torneo otorga máximo 1500 puntos al ganador.
+\
+
   Estas series pertenecen al circuito ATP tour, el cual es el circuito de tenis profesional masculino de élite en el mundo. Por otro lado, existen otros circuitos como:
   
   \begin{itemize}
-  \item \textbf{Challenger Tour:} Serie de torneos de menor categoría, representan el paso previo para jugadores que quieran escalar al circuito de élite
+  \item \textbf{Challenger Tour:} Serie de torneos de menor categoría, representan el paso previo para jugadores que quieran escalar al circuito de élite.
   \item \textbf{ITF:} Tornes que representan la base para los jugadores que quieran entrar al tenis profesional, para lograr obtener sus primeros puntos ATP.
   \end{itemize}
   \
-  En estos últimos circuitos, la ATP regula que jugadores con Rankings muy altos puedan participar en los mismos de manera directa, y así 
+  En estos últimos circuitos, la ATP regula que jugadores con Rankings muy altos puedan participar en los mismos de manera directa, y de esta manera garantizar el nivel competitivo.
 
 \
 
 \subsection{ Factores del entorno en el rendimiento competitivo}
 
-* Superficie (Surface): Es el tipo de pista en la cual se lleva a cabo el juego, hay 3 tipos de pista: Arcilla (Clay), Césped (Grass) y Pista Dura (Hard). Cada una de ellas determina una dinámica distinta de juego ya que cambian la altura, y velocidad de la pelota, así como el deslizamiento del jugador. La estadística deportiva demuestra que en el tenis existen jugadores “especialistas” cuyo rendimiento varía significativamente según el suelo, independientemente de su ranking general.\
+\textbf{* Superficie (Surface):} Es el tipo de pista en la cual se lleva a cabo el juego, en el tenis exiten los siguientes tipos de pista: 
+  \begin{itemize}
+  \item 1. Arcilla (Clay): Como su nombre lo indica, este tipo de pista está compuesto por arcilla, en cúanto a la dinámica de juego, el jugador debe deslizarse en el juego, frenado antes de llegar a la bola, lo que implica la necesidad de mayor equilibrio y coordinación. Los partidos en arcilla por lo general son más largos y la pelota bota más alto.
+  
+  \item 2. Césped (Grass): Es la superficie tradicional del tenis, se juega en césped y requiere de muchos cuidados constantes y por ello es aquella que cuenta con menos torneos en el circuito profesional. La dinámica de juego consiste en flexionar mucho las rodillas debido a que la pelota tiene un bote bajo y se desplza muy rápido hacia el otro lado de la cancha; deslizarse en esta superficie es sumamente peligroso, debido a que puede ocasionar caidas o lesiones.
+  
+  \item 3. Pista dura (Hard): Es la superficie más jugada en todo el circuito profesional, se dice que es la pista con el "balance perfecto" producto que el bote de la pelota es predecible, no bota alto y lento como en arcilla, ni bajo y rápido como en césped, el bote es más "uniforme".  Es la superficie más fatal para el cuerpo, ya que las rodillas y los tobillos absorben todo el impacto de los deslizamientos en cancha.
+  \end{itemize}
+  \
  
-* Rondas (Round): A medida que un torneo progresa, el nivel de resistencia del oponente aumenta. Estadísticamente, se espera que la desviación estándar del ranking de los ganadores merme conforme se avanza hacia las rondas finales.
+\textbf{* Rondas (Round):} A medida que un torneo progresa, el nivel de resistencia del oponente aumenta. Estadísticamente, se espera que la desviación estándar del ranking de los ganadores merme conforme se avanza hacia las rondas finales.
 \
 
 \subsection{Análisis exploratorio de datos}
@@ -249,7 +260,7 @@ tenis2 <- tenis %>%
   mutate(
     Winner_rank=(ifelse(Player_1==Winner, Rank_1, Rank_2)),
     Loser_rank=(ifelse(Player_1!=Winner, Rank_1, Rank_2))
-  )#Cree dos nuevas columnas para el analisis de datos
+  )#Cree dos nuevas columnas para los ganadores y perdeores de partidos
 
 print(paste("Registros válidos:", nrow(tenis2), 
             "| Cantidad de variables:", ncol(tenis2))) #contabilizamos la data
@@ -266,32 +277,110 @@ write_csv(tenis2, "tenis_limpio.csv")
 
 {\small Este capítulo presenta los resultados obtenidos al aplicar las metodologías descritas en el capítulo anterior, así como del análisis estadístico descriptivo de las variables estudiadas y las ventajas y desventajas al aplicar dichos tests.}
 
-\section{Presentación de resultados 1}
+\section{Distribución del Ranking de ganadores y perdedores}
 
+\subsection{Resumen estadístico de los ganadores y perdedores}
 Descripción\
 
 ```{r}
 tabla_rank <- tenis2 %>% 
   select(Winner_rank, Loser_rank)
-rank <- c("Winner_rank", "Loser_rank")
+Rank<- c("Winner_rank", "Loser_rank")
 
 tabla_variables <- data.frame(
-  rank=rank,
-  Promedio=sapply(tenis2[rank],mean),
-  Dsv_Est=sapply(tenis2[rank],sd),
-  Mediana=sapply(tenis2[rank],mean)
+  Rank=Rank,
+  Promedio=sapply(tenis2[Rank],mean),
+  Desviacion_Estandar=sapply(tenis2[Rank],sd),
+  Mediana=sapply(tenis2[Rank],median)
 )
 rownames(tabla_variables) <- NULL
 
+kable(tabla_variables,
+      format= "latex",
+      booktabs = TRUE,
+      digits = 2,
+      col.names = c("Rank", "Promedio", "Desviación Estandar", "Mediana"),
+      caption = "Estadisticas descriptivas de los ganadores y perdedores") %>%
+  kable_styling(latex_options = c("striped", "hold_position"), font_size = 10, full_width = FALSE)
+
+
+```
+\subsection{Efectividad del ranking cómo indicador de éxito}
+ Se observa que los resultados fuera del pronóstico son tan solo poco más de un tercio que los resultados esperados, es decir el número de veces que un jugador con un ranking peor ranking (ranking mayor numéricamente) venció a un jugador con mejor ranking (ranking menor numéricamente) es b
+
+
+```{r}
+
+tabla_caja <- stack(tenis2[, c("Winner_rank", "Loser_rank")])
+
+ggplot(tabla_caja, aes(x = ind, y = values, fill = ind)) +
+  geom_boxplot(alpha = 0.8) +
+  scale_fill_manual(values = c("blue2", "darkorange"), labels = c("Ganador", "Perdedor")) +
+  labs(title = "Distribución de Rankings", x = "", y = "Posición ATP") +
+  theme_minimal()
+
+```
+```{r}
+tabla_histogram<- tenis2 %>%
+  mutate(rango = cut(Winner_rank, 
+                     breaks = seq(0, 50, by = 5),
+                     labels = c("1-5", "6-10", "11-15", "16-20", "21-25", 
+                                "26-30", "31-35", "36-40", "41-45", "46-50"))) %>%
+  group_by(rango) %>%
+  summarise(wins = n())
+ggplot(tabla_histogram, aes(x = rango, y = wins)) +
+  geom_col(fill = "steelblue", color = "white", width=1) +
+  labs(title = "Distribución de victorias según ranking",
+       x = "Ranking Agrupado",
+       y = "Numero de Victorias")+
+  geom_line(aes(group=1),color="red",linewidth=1.5)
 
 ```
 
 
-\section{Presentación de resultados 2}
 
-Descripción\
 
-\section{Presentación de resultados n}
+\section{Relación Ranking-Superficie}
+  Los jugadores del ATP tour pueden participar en torneos con 3 tipos de superficies: Pista dura(Hard), Arcilla(Clay) y Césped (Grass), cada una de estas con diferente dinámica de juego lo cúal puede llegar a influir en el desempeño de los jugadores.
+
+\subsection{Resumen estadístico de ranking según superficie
+
+En la tabla 4.2 se observa el ranking promedio según superficie, a simple vista se puede percibir que en la superficie de Pista Dura (Hard) su promedio y mediana son más bajos lo cual indica que los mejores jugadores ganan mucho más en esta superfice, en cuanto a la superficie de Césped presenta la mediana más alta de manera significativa lo cual indica que el 50% de los ganadores tiene un ranking mayor o igual a 21. Por otro lado, 
+```{r}
+tabla_superfice <- tenis2 %>% 
+  group_by(Surface) %>%
+  summarise( Total_Partidos=n(),
+    Promedio= mean(Winner_rank),
+    Mediana= median(Winner_rank),
+    RIQ_Winner= IQR(Winner_rank),
+    Desviacion_estandar= sd(Winner_rank),
+    CV=(Desviacion_estandar/Promedio)*100
+    )
+kable(tabla_superfice, digits = 2, 
+      col.names = c("Superficie", "Total de partidos", "Promedio", "Mediana", "RIQ", "Desv. Est.", "CV (%)"),
+      caption = "Resúmen estadístico del ranking por Superficie") %>%
+  kable_styling(latex_options = "striped")
+
+```
+
+\subsection{Dispersión de ranking por superficie}
+En el siguiente gráfico se puede observar que en las superficies de pista dura y arcilla, el 50% de los jugadores con victorias tienen 
+\
+```{r}
+ggplot(tenis2,
+       aes(x=Surface, 
+           y=Winner_rank, 
+           fill=Surface))+
+  geom_boxplot()+
+  labs(
+    title="Distrbución del ranking de los ganadores según superficie",
+    x="Tipo de superficie",
+    y="Ranking del ganador"
+  )
+```
+
+
+\section{n}
 
 Descripción\
 
