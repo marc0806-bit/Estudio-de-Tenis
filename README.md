@@ -20,5 +20,6 @@ Identificar en que series del circuito se concentran los jugadores según su ran
 Verificar si el ranking de los jugadores disminuye a medida de que se avanza en las etapas eliminatorias.
 
 #enlace del dashboard: https://estudio-de-tenis.onrender.com/
- #enlace del informe: https://estudio-de-tenis-1.onrender.com/informe.pdf
+
+#enlace del informe: https://estudio-de-tenis-1.onrender.com/informe.pdf
    
