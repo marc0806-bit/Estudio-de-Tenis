@@ -152,6 +152,7 @@ with tab3:
     )
 
     # Filtro que SOLO depende de la categoría 
+    #----Antes ya se hizo la configuración de los nombres para que no te confundas
     df_cat = df_elite[df_elite['Series'] == cat]
 
     #  SELECTOR DE TORNEO (Afecta solo al gráfico de burbujas)
@@ -179,6 +180,7 @@ with tab3:
     st.divider()
 
     # BOXPLOT SEGUNDO (ABAJO Y ESTÁTICO)
+    #-------En general dependiendo de la categoría para que no te confundas
     st.subheader(f"📊 Distribución por Superficie en {cat}")
     
     if not df_cat.empty:
@@ -194,6 +196,7 @@ with tab3:
         st.plotly_chart(fig_box, use_container_width=True)
         st.info(f"Este análisis de superficie representa a todos los torneos de la categoría {cat}.")
 # PESTAÑA 4: VICTORIAS 
+# ------ Última pestaña que también pediste, con el top 50 de jugadores con más victorias y la consulta individual para cada jugador, con su evolución anual.
 with tab4:
     st.header("🏆 Top 50 Jugadores con más Victorias y comportamientos de su top")
     top_vics = df['Winner'].value_counts().head(50).reset_index()
