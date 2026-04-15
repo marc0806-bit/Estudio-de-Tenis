@@ -149,7 +149,7 @@ with tab3:
         key="cat_tab3_radio"
     )
 
-    # iltro que SOLO depende de la categoría 
+    # Filtro que SOLO depende de la categoría 
     df_cat = df_elite[df_elite['Series'] == cat]
 
     #  SELECTOR DE TORNEO (Afecta solo al gráfico de burbujas)
