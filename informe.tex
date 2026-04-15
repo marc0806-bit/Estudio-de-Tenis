@@ -104,7 +104,7 @@ existen otros variables como el tipo de superficie, la categoría de la
 competición y el avance de rondas en un torneo, que hacen que esta
 confiable métrica no siempre sea tan representativa. De acuerdo con lo
 anteriormente expuesto, se examinará por medio de estadísticas
-descriptivas como el ranking ATP fluctúa dependiendo del contexto en el
+descriptivas, como el ranking ATP fluctúa dependiendo del contexto en el
 que se desarrolle la
 competencia.             % Aquí se pega el texto que escribiste en el YAML
   
@@ -123,7 +123,7 @@ En el área del deporte profesional, la recopilación y análisis de datos
 históricos es una tarea fundamental para generar estadísticas
 descriptivas que permitan recopilar información relevante del
 rendimiento de un jugador o equipo. A diferencia de los deportes jugados
-en equipo dónde las estadísticas pueden llegar a atenuarse por el
+en equipo dónde las estadísticas pueden llegar atenuarse por el
 desempeño grupal, en el caso del tenis, debido a su estructura de
 competición individual (single), cada dato (puntos obtenidos, ranking,
 cantidad de sets jugados) manifiesta el desempeño individual de cada
@@ -171,8 +171,8 @@ representativo?\\
 \textbf{3.} ¿En qué series de torneos se enfocan los jugadores con
 rankings más altos y más bajos?\\
 
-\textbf{4.} ¿Cúal es el ranking promedio predominante según se avanza en
-las rondas?\\
+\textbf{4.} ¿Cúal es el ranking promedio según se avanza en las
+rondas?\\
 
 \section{Justificación}
 
@@ -319,8 +319,8 @@ ganador.\\
 
 A pesar de que los torneos Grand Slam no pertenecen al circuito ATP
 tour, se consideran como circuito de élite debido a que son los que
-otorgan más puntos ATP al ganado y finalistas. Además, se estos torneos
-se consideran en el calendario del ATP tour.
+otorgan más puntos ATP al ganador y finalistas. Además, estos torneos se
+consideran en el calendario del ATP tour.
 
 Estas series pertenecen al circuito ATP tour (excepto los Grand Slams)
 el cual es el circuito de tenis profesional masculino de élite en el
@@ -328,12 +328,12 @@ mundo. Por otro lado, existen otros circuitos como:
 
 \begin{itemize}
   \item \textbf{Challenger Tour:} Serie de torneos de menor categoría, representan el paso previo para jugadores que quieran escalar al circuito de élite.
-  \item \textbf{ITF:} Tornes que representan la base para los jugadores que quieran entrar al tenis profesional, para lograr obtener sus primeros puntos ATP.
+  \item \textbf{ITF:} Torneos que representan la base para los jugadores que quieran entrar al tenis profesional, para lograr obtener sus primeros puntos ATP.
   \end{itemize}
 
 \hfill\break
-En estos últimos circuitos, la ATP regula que jugadores con Rankings muy
-altos puedan participar en los mismos de manera directa, y de esta
+En estos últimos circuitos, la ATP regula que jugadores con mejores
+rankings puedan participar en los mismos de manera directa, y de esta
 manera garantizar el nivel competitivo.
 
 \hfill\break
@@ -344,11 +344,11 @@ manera garantizar el nivel competitivo.
 a cabo el juego, en el tenis exiten los siguientes tipos de pista:
 
 \begin{itemize}
-  \item 1. Arcilla (Clay): Como su nombre lo indica, este tipo de pista está compuesto por arcilla, en cúanto a la dinámica de juego, el jugador debe deslizarse en el juego, frenado antes de llegar a la bola, lo que implica la necesidad de mayor equilibrio y coordinación. Los partidos en arcilla por lo general son más largos y la pelota bota más alto.
+  \item 1. Arcilla (Clay): Como su nombre lo indica, este tipo de pista está compuesto por arcilla; en cúanto a la dinámica de juego, el jugador debe deslizarse en el juego, frenando antes de llegar a la bola, lo que implica la necesidad de mayor equilibrio y coordinación. Los partidos en arcilla por lo general son más largos y la pelota bota más alto.
   
   \item 2. Césped (Grass): Es la superficie tradicional del tenis, se juega en césped y requiere de muchos cuidados constantes y por ello es aquella que cuenta con menos torneos en el circuito profesional. La dinámica de juego consiste en flexionar mucho las rodillas debido a que la pelota tiene un bote bajo y se desplaza muy rápido hacia el otro lado de la cancha; deslizarse en esta superficie es sumamente peligroso, debido a que puede ocasionar caidas o lesiones.
   
-  \item 3. Pista dura (Hard): Es la superficie más jugada en todo el circuito profesional, se dice que es la pista con el "balance perfecto" producto que el bote de la pelota es predecible, no bota alto y lento como en arcilla, ni bajo y rápido como en césped, el bote es más "uniforme".  Es la superficie más fatal para el cuerpo, ya que las rodillas y los tobillos absorben todo el impacto de los deslizamientos en cancha.
+  \item 3. Pista dura (Hard): Es la superficie más jugada en todo el circuito profesional, se dice que es la pista con el "balance perfecto" producto que el bote de la pelota es predecible, no bota alto y lento como en arcilla, ni bajo y rápido como en césped, el bote es más uniforme.  Es la superficie que más afecta el cuerpo para el cuerpo, ya que las rodillas y los tobillos absorben todo el impacto de los deslizamientos en cancha.
   \end{itemize}
 
 \hfill\break
@@ -477,6 +477,10 @@ existencia de datos nulos.\\
 \end{verbatim}
 
 \subsection{Análisis de varianza (ANOVA)}
+
+Se realiza un para calcular los estadísticos descriptivos de las
+variables cuantitativas principales de este estudio.
+
 \begin{table}[!h]
 \centering
 \caption{\label{tab:unnamed-chunk-2}Estadisticas descriptivas de los ganadores y perdedores}
@@ -494,10 +498,9 @@ Loser\_rank & 26.45 & 14.28 & 27 & 1 & 50 & 25\\
 
 \chapter{Análisis de Resultados}
 
-\{\small Este capítulo presenta los resultados obtenidos al aplicar las
+Este capítulo presenta los resultados obtenidos al aplicar las
 metodologías descritas en el capítulo anterior, así como del análisis
-estadístico descriptivo de las variables estudiadas y las ventajas y
-desventajas al aplicar dichos tests.\}
+estadístico descriptivo de las variables estudiadas.
 
 \section{Distribución del Ranking de ganadores y perdedores}
 
@@ -509,11 +512,11 @@ de los ganadores y perdedores en los partidos del circuito.
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 Se puede observar que el ranking del 50\% de los ganadores es menor o
-igual a 16, mientras que en el ranking de los ganadores la mediana es de
-27. En cuanto a la concentración central, en el ranking de los ganadores
-el 50\% tienen un ranking comprendido entre 8 a 31, por otro lado, en el
-ranking de los perdedores el 50\% de los datos tienen una posición entre
-15 a 38.
+igual al top 16, mientras que en el ranking de los ganadores la mediana
+es del top 27. En cuanto a la concentración central, en el ranking de
+los ganadores el 50\% tienen un ranking comprendido entre 8 a 31, por
+otro lado, en el ranking de los perdedores el 50\% de los datos tienen
+una posición entre 15 a 38.
 
 \subsection{Histograma de las victorias de los ganadores según su ranking}
 
@@ -534,8 +537,7 @@ superficies: Pista dura(Hard), Arcilla(Clay) y Césped (Grass), cada una
 de estas con diferente dinámica de juego lo cúal puede llegar a influir
 en el desempeño de los jugadores.
 
-\textbackslash subsection\{Resumen estadístico de ranking según
-superficie
+\subsection{Resumen estadístico de ranking según superficie}
 
 En la tabla 4.2 se observa el ranking promedio según superficie, a
 simple vista se puede percibir que en la superficie de Pista Dura (Hard)
@@ -543,7 +545,12 @@ su promedio y mediana son más bajos lo cual indica que los mejores
 jugadores ganan mucho más en esta superfice, en cuanto a la superficie
 de Césped presenta la mediana más alta de manera significativa lo cual
 indica que el 50\% de los ganadores tiene un ranking mayor o igual a 21.
-Por otro lado,
+Por otro lado, se puede apreciar que en la superficie de Césped posee la
+media y la mediana más altas, mientras que el ranking intercuartílico es
+de 27.5 en hierba los rankings de los jugadores en los partidos están
+más disperso. Por último, se puede observar que en arcilla la media y
+mediana es de 16 y 19.48 mientras que el ranking intercuartílico es de
+26.5.
 
 \begin{longtable}[t]{lrrrrrr}
 \caption{\label{tab:unnamed-chunk-5}Resúmen estadístico del ranking por Superficie}\\
@@ -559,7 +566,9 @@ Grass & 627 & 21.45 & 21 & 27.5 & 14.99 & 69.90\\
 \subsection{Dispersión de ranking por superficie}
 
 En el siguiente gráfico se puede observar que en las superficies de
-pista dura y arcilla, el 50\% de los jugadores con victorias tienen\\
+pista dura y arcilla, el 50\% de los jugadores con victorias tienen un
+ranking menor o igual a 16. Mientras que en césped la mediana es de 21.5
+y el tercer cuartil se encuentra cerca de 35.\\
 
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-6-1} \end{center}
 \newpage
@@ -572,13 +581,12 @@ circuito ATP tour según el ranking agrupado.\\
 
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
-Se examina que los jugadores con mayor porcentaje de victorias está
-comprendida en los menores puestas del ranking la mayor concentración de
-sus victorias se encuentra en los torneos con mayor prestigo dónde se
-otorgan mayor cantidad de puntos y su particpación en los ATP250 es muy
-baja. Igualmente se observa que a medida de que aumenta el ranking se
-incrementa la participación y concentración de victorias en torneos de
-menor prestigio.
+Se examina que los jugadores con menores puestos del ranking su mayor
+concentración de victorias se encuentra en los torneos con mayor
+prestigo dónde se otorgan mayor cantidad de puntos y su particpación en
+los ATP250 es muy baja. Igualmente se observa que a medida de que
+aumenta el ranking se incrementa la participación y concentración de
+victorias en torneos de menor prestigio.
 
 \section{Ranking promedio de los jugadores por ronda}
 
@@ -601,26 +609,38 @@ finalizado, se cierra la temporada.
 
 \chapter{Conclusiones y Recomendaciones}
 
-\textbf{1.-} Conclusion 1 del trabajo de investigación.\\
+\textbf{1.-} . Se confirma que el ranking ATP es un indicador robusto de
+éxito competitivo.La mediana del ranking de los ganadores 16 es
+significativamente menor que la de los perdedores 27, lo que demuestra
+que los jugadores mejor posicionados imponen su jerarquía en la mayoría
+de los enfrentamientos, ya que la concentración de victoria se acumula
+en jugadores con rankings cercanos a uno.\\
 
-\textbf{Recomendación} Recomendación 1 del trabajo de investigación.\\
+\textbf{2.-} Se confirma que el ranking de los ganadores varía
+dependiendo de la superficie, es decir, existen superficies en donde
+factores externos influyen en el rendimiento competitivo de los
+jugadores.\\
 
-\textbf{2.-} Conclusion 2 del trabajo de investigación.\\
+\textbf{3.-} Se observa que los jugadores con rankings más altos (top
+10) concentran su participación y concentración de vitorias en torneos
+con mayor prestigio, es decir, aquellos que otorgan más puntos ATP y
+poseen una menor participación en partidos dónde se otorgan menos puntos
+ATP. Además, se confirma que a medida que el ranking empeora, aumenta la
+participación y concentración de victorias en torneos de menor
+prestigio.
 
-\textbf{Recomendación} Recomendación 2 del trabajo de investigación.\\
-
-\textbf{n.-} Conclusion n del trabajo de investigación.\\
-
-\textbf{Recomendación} Recomendación n del trabajo de investigación.\\
+\textbf{4.-} Finalmente se confirma que a medida de que se avanza en las
+rondas el ranking promedio de los jugadores disminuye. O sea, en las
+rondas finales la mayor excelencia se encuentra en las finales y
+semifinales.\\
 
 \appendix
 \renewcommand{\thechapter}{\Alph{chapter}}
 
 \chapter{Anexo A}
 
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-9-1} \end{center}
 \chapter{Anexo B}
-
-\chapter{Anexo C}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                   REFERENCIAS                     %
