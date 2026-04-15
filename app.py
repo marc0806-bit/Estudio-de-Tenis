@@ -13,8 +13,8 @@ st.set_page_config(
 )
 
 # TÍTULO Y ESTÉTICA
-st.title("🎾 Dashboard del Ranking ATP (2016-2025) 🎾")
-st.markdown("---")
+st.title("🎾 Dashboard del Ranking ATP de los top 50 (2016-2025) 🎾")
+st.markdown("Explora el rendimiento de los mejores tenistas en torneos clave. Análisis interactivo de rankings, superficies y victorias.")
 
 # FUNCIÓN DE CARGA Y LIMPIEZA
 @st.cache_data 
@@ -31,7 +31,7 @@ def load_and_clean_tennis_data(filename):
     df['winner_rank'] = np.where(df['Winner'] == df['Player_1'], df['Rank_1'], df['Rank_2'])
     df['loser_rank'] = np.where(df['Winner'] == df['Player_1'], df['Rank_2'], df['Rank_1'])
     
-    # --- UNIFICACIÓN GLOBAL DE TORNEOS (Lo que pediste) ---
+    # UNIFICACIÓN GLOBAL DE TORNEOS 
     mapeo = {
         'French Open': 'Roland Garros',
         'BNP Paribas Open': 'Indian Wells',
@@ -133,7 +133,7 @@ with tab2:
 # PESTAÑA 3: DISTRIBUCIÓN 
 with tab3:
     
-    st.header("💻 Nivel de Élite: Rondas Finales")
+    st.header("💻 Análisis de superficie y comportamiento de las categorías")
     
     # Preparación de datos base
     df['rank_medio'] = (df['winner_rank'] + df['loser_rank']) / 2
@@ -193,7 +193,7 @@ with tab3:
         st.info(f"Este análisis de superficie representa a todos los torneos de la categoría {cat}.")
 # PESTAÑA 4: VICTORIAS 
 with tab4:
-    st.header("🏆 Top 50 Jugadores con más Victorias")
+    st.header("🏆 Top 50 Jugadores con más Victorias y comportamientos de su top")
     top_vics = df['Winner'].value_counts().head(50).reset_index()
     top_vics.columns = ['Jugador', 'Victorias']
     st.plotly_chart(px.bar(top_vics, x='Jugador', y='Victorias', color='Victorias', template='plotly_dark'), use_container_width=True)
