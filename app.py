@@ -31,7 +31,8 @@ def load_and_clean_tennis_data(filename):
     df['winner_rank'] = np.where(df['Winner'] == df['Player_1'], df['Rank_1'], df['Rank_2'])
     df['loser_rank'] = np.where(df['Winner'] == df['Player_1'], df['Rank_2'], df['Rank_1'])
     
-    # UNIFICACIÓN GLOBAL DE TORNEOS 
+    # -----UNIFICACIÓN GLOBAL DE TORNEOS (lo que pediste Andrés, cuando veas "--" son mensajes para ti)
+    #------ este es el cambio de nombres de torneos, para que no haya confusión entre los distintos nombres que pueden tener los mismos torneos a lo largo de los años.
     mapeo = {
         'French Open': 'Roland Garros',
         'BNP Paribas Open': 'Indian Wells',
@@ -47,12 +48,12 @@ def load_and_clean_tennis_data(filename):
     return df_raw, df
 
 df_raw, df = load_and_clean_tennis_data('Tenis.csv')
-
+#-----los cambios de titulo que también pedistes
 # ESTRUCTURA DE NAVEGACIÓN
 tab1, tab2, tab3, tab4 = st.tabs([
     "🔢 Estadísticos", 
-    "📊 Comparación", 
-    "💻 Distribución",  
+    "📊 Densidad y Distribución", 
+    "💻  Superficies y Categorías",  
     "🏆 Victorias"
 ])
 
@@ -105,6 +106,7 @@ with tab1:
         st.warning(f"**Interpretación:** Dispersión alta. El promedio indica que la élite también cae.")
 
 # PESTAÑA 2: COMPARACIÓN
+#-----Parte que pidió Oliver
 with tab2:
     st.header("🎾 Densidad de Ganadores")
     series_atp = {s: df[df['Series'] == s]['winner_rank'].dropna() for s in ['Grand Slam', 'Masters 1000', 'ATP500', 'ATP250']}
