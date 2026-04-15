@@ -171,8 +171,8 @@ representativo?\\
 \textbf{3.} ¿En qué series de torneos se enfocan los jugadores con
 rankings más altos y más bajos?\\
 
-\textbf{4.} ¿Cúal es el ranking promedio predominante en las finales y
-semifinales de los torneos más importantes?\\
+\textbf{4.} ¿Cúal es el ranking promedio predominante según se avanza en
+las rondas?\\
 
 \section{Justificación}
 
@@ -205,8 +205,8 @@ este estudio se base en el circuito de élite del tenis.\\
 \begin{itemize}
   \item{Comparar el desempeño de los ganadores y perdedores de los jugadores pertenecientes al top 50 en el período de análisis.}
   \item{Analizar si la posición del ranking de los ganadores varía de manera sustancial de acuerdo a la superficie del partido jugado.}
-  \item{Verificar la eficiencia del ranking como pronosticador del éxito mediante el avance en las rondas y como se distribuye el ranking de los jugadores en las últimas rondas.}
-  \item{Identificar si los jugadores con mejor posicionamiento (Top 10), concentran su participación en eventos con mayor prestigio.}
+  \item{Identificar en que series del circuito se concentran los jugadores según su ranking.}
+  \item{Verificar si el ranking de los jugadores disminuye a medida de que se avanza en las etapas eliminatorias.}
 \end{itemize}
 
 \section{Cobertura}
@@ -297,9 +297,9 @@ mundial.\\
 
 \subsection{Categorización de torneos y estructura de puntos}
 
-El circuito profesional se divide en distintas series de torneos, las
-cuales definen la cantidad de puntos en disputa y el nivel de
-competitividad, ordenados de manera jerárquica.\\
+El circuito profesional de élite se divide en distintas series de
+torneos, las cuales definen la cantidad de puntos en disputa y el nivel
+de competitividad, ordenados de manera jerárquica.\\
 
 \textbf{1.} Grand Slams: Los cuatro torneos de mayor prestigio (Abierto
 de Australia, Roland Garros, Wimbledon y US Open), que otorgan 2000
@@ -317,9 +317,14 @@ temporada del tenis masculino, dónde solamente participan los 8 mejores
 jugadores de la temporada. Este torneo otorga máximo 1500 puntos al
 ganador.\\
 
-Estas series pertenecen al circuito ATP tour, el cual es el circuito de
-tenis profesional masculino de élite en el mundo. Por otro lado, existen
-otros circuitos como:
+A pesar de que los torneos Grand Slam no pertenecen al circuito ATP
+tour, se consideran como circuito de élite debido a que son los que
+otorgan más puntos ATP al ganado y finalistas. Además, se estos torneos
+se consideran en el calendario del ATP tour.
+
+Estas series pertenecen al circuito ATP tour (excepto los Grand Slams)
+el cual es el circuito de tenis profesional masculino de élite en el
+mundo. Por otro lado, existen otros circuitos como:
 
 \begin{itemize}
   \item \textbf{Challenger Tour:} Serie de torneos de menor categoría, representan el paso previo para jugadores que quieran escalar al circuito de élite.
@@ -341,69 +346,123 @@ a cabo el juego, en el tenis exiten los siguientes tipos de pista:
 \begin{itemize}
   \item 1. Arcilla (Clay): Como su nombre lo indica, este tipo de pista está compuesto por arcilla, en cúanto a la dinámica de juego, el jugador debe deslizarse en el juego, frenado antes de llegar a la bola, lo que implica la necesidad de mayor equilibrio y coordinación. Los partidos en arcilla por lo general son más largos y la pelota bota más alto.
   
-  \item 2. Césped (Grass): Es la superficie tradicional del tenis, se juega en césped y requiere de muchos cuidados constantes y por ello es aquella que cuenta con menos torneos en el circuito profesional. La dinámica de juego consiste en flexionar mucho las rodillas debido a que la pelota tiene un bote bajo y se desplza muy rápido hacia el otro lado de la cancha; deslizarse en esta superficie es sumamente peligroso, debido a que puede ocasionar caidas o lesiones.
+  \item 2. Césped (Grass): Es la superficie tradicional del tenis, se juega en césped y requiere de muchos cuidados constantes y por ello es aquella que cuenta con menos torneos en el circuito profesional. La dinámica de juego consiste en flexionar mucho las rodillas debido a que la pelota tiene un bote bajo y se desplaza muy rápido hacia el otro lado de la cancha; deslizarse en esta superficie es sumamente peligroso, debido a que puede ocasionar caidas o lesiones.
   
   \item 3. Pista dura (Hard): Es la superficie más jugada en todo el circuito profesional, se dice que es la pista con el "balance perfecto" producto que el bote de la pelota es predecible, no bota alto y lento como en arcilla, ni bajo y rápido como en césped, el bote es más "uniforme".  Es la superficie más fatal para el cuerpo, ya que las rodillas y los tobillos absorben todo el impacto de los deslizamientos en cancha.
   \end{itemize}
 
 \hfill\break
 
-\textbf{* Rondas (Round):} A medida que un torneo progresa, el nivel de
-resistencia del oponente aumenta. Estadísticamente, se espera que la
-desviación estándar del ranking de los ganadores merme conforme se
-avanza hacia las rondas finales.\\
+\textbf{* Rondas (Round):} Representan las etapas eliminatorias de cada
+torneo, en general, un torneo consta de 7 rondas que van desde la
+primera ronda hasta la final, reduciendo a la mitad el número de
+jugadores a medida de que se avanza en la competición. Mientras más
+avance un jugador, mayor son los puntos ATP que recibe en ese torneo.\\
+
+También, es importante aclarar que el torneo Masters Cup, es el único
+torneo que tiene un formato de competición distinto, llamado Round
+Robin.
+
+\textbf{* Round Robin:} A diferencia de la eliminación directa, este
+formato de competición consiste en que cada jugador se enfrenta a todos
+los demás miembros de su grupo, independientemente de si gana o pierde
+sus partidos anteriores.
 
 \subsection{Análisis exploratorio de datos}
 
-En virtud de que la presente investigación tiene un enfoque descriptivo,
-un Análisis Exploratorio de datos (EDA) permite identificar patrones,
-detectar valores atípicos y resumir las características principales del
-estudio.\\
-
-Matemáticamente Sea \(X\) una variable que representa el ranking del
-ganador e \(Y\) una variable que representa el ranking del perdedor,
-entonces:\\
+\subsubsection{Medidas de tendencia central}
 
 \begin{itemize}
 \item \textbf{Media muestral}
 \end{itemize}
 
-\[\bar{x}=\frac{\sum_{i=1}^{n} x_i}{n} \vee_{}^{} \bar{y}=\frac{\sum_{i=1}^{n} y_i}{n}\]
+\[\bar{x}=\frac{\sum_{i=1}^{n} x_i}{n} \]
+
+\subsubsection{Medidas de dispersión}
 
 \begin{itemize}
  \item \textbf{Varianza(desvíos con respecto a la media)}: Indica la desviación promedio del ranking de los ganadores o perdedores con respecto a su media.
 \end{itemize}
 
-\[S^2_x=\frac{\sum_{i=1}^{n}(x_i- \bar{x})^2} {n-1} \vee S^2_y=\frac{\sum_{i=1}^{n}(y_i- \bar{y} )^2} {n-1}\]
+\[S^2_x=\frac{\sum_{i=1}^{n}(x_i- \bar{x})^2} {n-1} \]
+
+\begin{itemize}
+ \item \textbf{ Rango Intercuartílico (RIC):} Es la diferencia entre el tercer y primer cuartil.
+Representa el 50 por ciento central de la muestra y es la base para la construcción de los Diagramas de Caja.
+\end{itemize}
+
+\begin{itemize}
+ \item \textbf{ Coeficiente de variación:} Es una medida de dispersión relativa en términos porcentuales que permite comparar la variabilidad en conjuntos de datos con medias distintas. 
+\end{itemize}
+
+\[CV=\frac{S_x} {\bar{x}}*100\% \]
 
 \chapter{Marco Metódico}
 
-En esta sección se presentan las metodologías y/o test necesarios
-relacionados con la práctica divulgada en el marco teórico, así como las
-fuentes de datos.
+En esta sección se presentan las metodologías y herramientas
+estadísticas implementadas para responder a las preguntas de
+investigación.\\
+
+Se describe la limpieza y segmentación para el conjunto de datos
+utilizado en el estudio\\
+
+El análisis se ha realizado utilizando el lenguaje de programación R
+(version 4.5.2) bajo el entorno de desarrollo RStudio, aplicando el
+paradigma ``Tidyverse'' para la manipulación de los datos\\
 
 \section{Bases metódicas utilizadas en el trabajo de investigación}
 
-En esta sección se presentan las metodologías
+El diseño de esta investigación es de carácter cuantitativo y
+descriptivo, debido a que se anlizan variables cuantitativas como
+(Winner\_rank y Loser\_rank), y como se relacionan con el desempeño en
+los partidos, agrupadas por la categoría del torneo (Series), el tipo de
+superficie y la ronda alcanzada en el circuito profesional de la ATP en
+el período de 2016 a 2025.\\
 
-\subsection{Item 1}
+``El sistema de clasificación de la ATP constituye la herramienta más
+objetiva y robusta para cuantificar el estatus competitivo de un atleta
+en el circuito profesional (Reid et al., 2014) .''\\
 
-Descripción\\
+Esta investigación se enfoca en los atletas pertenecientes al Top 50
+para garantizar un análisis de la élite competitiva en el circuito ATP
+tour evanluando la robustez de la métrica del ranking como indicador de
+éxito. A continuación, se describen las etapas del procesamiento.\\
 
-\subsection{Item 2}
+\subsection{Fuente de datos}
 
-Descripción\\
+En la presente investigación se utiliza el dataset \textbf{Tenis.csv},
+en el cual se observan registros de los partidos jugados derivados de la
+Asociación de tenistas profesionales (ATP, 2026), cabe destacar que
+dichos partidos son en la modalidad de single (uno contra uno) y en
+torneos de élite en el tenis. El análisis descriptivo se enfoca en el
+uso de variables como Rank\_1 y Rank\_2, que cuantifican la posición
+competitiva de los atletas al momento del encuentro. Estas variables, en
+conjunto con dimensiones categóricas como Series(categoría del torneo),
+Surface(tipo de superficie) y Round(etapa eliminatoria del torneo),
+permiten caracterizar con precisión el desempeño competitivo y la
+estructura jerárquica de los jugadores dentro del circuito
+profesional.\\
 
-\subsubsection{Item 2.2}
+\subsection{Período de referencia}
 
-Descripción\\
+Los registros del data set comprenden un período que va desde el año
+2000 hasta principios de 2026, sin embargo, en esta investigación se
+delimitara en el análisis solo los partidos dónde ambos jugadores
+pertenezcan al top 50 en el período del año 2016 hasta el año 2025, es
+decir, 10 temporadas en el circuito ATP tour.\\
 
 \subsection{Procesamiento y limpieza de datos}
 
-Descripción\\
+Para el proceso de limpieza y filtrado de datos, se filtraron todos los
+partidos efectuados en el período de análisis (2016-2025) con ambos
+jugadores pertenecientes al top 50. Además, se agregaron dos nuevas
+columnas que representan el ranking del ganador y el ranking del
+perdedor, deonotadas como Winner\_rank y Loser\_rank respectivamente.
+Además, en este nuevo data set se hizo una verificación sobre la
+existencia de datos nulos.\\
 
 \begin{verbatim}
-## [1] "Registros válidos: 5957 | Cantidad de variables: 12"
+## [1] "Registros válidos del data set filtrado: 5933 | Cantidad de variables: 12"
 \end{verbatim}
 
 \begin{verbatim}
@@ -417,6 +476,22 @@ Descripción\\
 ##           0           0           0           0           0           0
 \end{verbatim}
 
+\subsection{Análisis de varianza (ANOVA)}
+\begin{table}[!h]
+\centering
+\caption{\label{tab:unnamed-chunk-2}Estadisticas descriptivas de los ganadores y perdedores}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{tabular}[t]{lrrrrrr}
+\toprule
+Rank & Promedio & Desviación Estandar & Mediana & Minimo & Maximo & RIQ\\
+\midrule
+\cellcolor{gray!10}{Winner\_rank} & \cellcolor{gray!10}{19.47} & \cellcolor{gray!10}{14.59} & \cellcolor{gray!10}{16} & \cellcolor{gray!10}{1} & \cellcolor{gray!10}{50} & \cellcolor{gray!10}{24}\\
+Loser\_rank & 26.45 & 14.28 & 27 & 1 & 50 & 25\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \chapter{Análisis de Resultados}
 
 \{\small Este capítulo presenta los resultados obtenidos al aplicar las
@@ -426,34 +501,31 @@ desventajas al aplicar dichos tests.\}
 
 \section{Distribución del Ranking de ganadores y perdedores}
 
-\subsection{Resumen estadístico de los ganadores y perdedores}
+\subsection{Dispersión del ranking de ganadores y perdedores}
 
-Descripción\\
-
-\begin{table}[!h]
-\centering
-\caption{\label{tab:unnamed-chunk-2}Estadisticas descriptivas de los ganadores y perdedores}
-\centering
-\fontsize{10}{12}\selectfont
-\begin{tabular}[t]{lrrr}
-\toprule
-Rank & Promedio & Desviación Estandar & Mediana\\
-\midrule
-\cellcolor{gray!10}{Winner\_rank} & \cellcolor{gray!10}{19.50} & \cellcolor{gray!10}{14.59} & \cellcolor{gray!10}{16}\\
-Loser\_rank & 26.46 & 14.27 & 27\\
-\bottomrule
-\end{tabular}
-\end{table}
-\subsection{Efectividad del ranking cómo indicador de éxito}
-
-Se observa que los resultados fuera del pronóstico son tan solo poco más
-de un tercio que los resultados esperados, es decir el número de veces
-que un jugador con un ranking peor ranking (ranking mayor numéricamente)
-venció a un jugador con mejor ranking (ranking menor numéricamente) es b
+Se realiza un gráfico de cajas para observar como se comporta el ranking
+de los ganadores y perdedores en los partidos del circuito.
 
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
+Se puede observar que el ranking del 50\% de los ganadores es menor o
+igual a 16, mientras que en el ranking de los ganadores la mediana es de
+27. En cuanto a la concentración central, en el ranking de los ganadores
+el 50\% tienen un ranking comprendido entre 8 a 31, por otro lado, en el
+ranking de los perdedores el 50\% de los datos tienen una posición entre
+15 a 38.
+
+\subsection{Histograma de las victorias de los ganadores según su ranking}
+
+Se realiza un histograma para evaluar como se distribuye el número de
+victorias de los ganadores según el ranking.
+
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-4-1} \end{center}
+
+Se aprecia que existe un sesgo hacia la derecha y la mayor concentración
+de victorias se encuentra en los primeros intervalos. Es decir, aquellos
+jugadores con ranking cercanos a 1 agrupan la mayor cantidad de
+victorias de los partidos.
 
 \section{Relación Ranking-Superficie}
 
@@ -480,7 +552,7 @@ Superficie & Total de partidos & Promedio & Mediana & RIQ & Desv. Est. & CV (\%)
 \midrule
 \cellcolor{gray!10}{Clay} & \cellcolor{gray!10}{1551} & \cellcolor{gray!10}{19.48} & \cellcolor{gray!10}{16} & \cellcolor{gray!10}{26.0} & \cellcolor{gray!10}{15.02} & \cellcolor{gray!10}{77.09}\\
 Grass & 627 & 21.45 & 21 & 27.5 & 14.99 & 69.90\\
-\cellcolor{gray!10}{Hard} & \cellcolor{gray!10}{3779} & \cellcolor{gray!10}{19.18} & \cellcolor{gray!10}{16} & \cellcolor{gray!10}{24.0} & \cellcolor{gray!10}{14.31} & \cellcolor{gray!10}{74.61}\\
+\cellcolor{gray!10}{Hard} & \cellcolor{gray!10}{3755} & \cellcolor{gray!10}{19.13} & \cellcolor{gray!10}{16} & \cellcolor{gray!10}{24.0} & \cellcolor{gray!10}{14.31} & \cellcolor{gray!10}{74.83}\\
 \bottomrule
 \end{longtable}
 
@@ -490,10 +562,42 @@ En el siguiente gráfico se puede observar que en las superficies de
 pista dura y arcilla, el 50\% de los jugadores con victorias tienen\\
 
 \begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\newpage
 
-\section{n}
+\section{Concentración del ranking según serie}
 
-Descripción\\
+Se genera un gráfico de barras apiladas en el cual se examina el
+pocentaje de particpacion de los ganadores en las diferentes series del
+circuito ATP tour según el ranking agrupado.\\
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-7-1} \end{center}
+
+Se examina que los jugadores con mayor porcentaje de victorias está
+comprendida en los menores puestas del ranking la mayor concentración de
+sus victorias se encuentra en los torneos con mayor prestigo dónde se
+otorgan mayor cantidad de puntos y su particpación en los ATP250 es muy
+baja. Igualmente se observa que a medida de que aumenta el ranking se
+incrementa la participación y concentración de victorias en torneos de
+menor prestigio.
+
+\section{Ranking promedio de los jugadores por ronda}
+
+Para observar como se comporta el ranking de los jugadores a medida que
+se avanza en las etapas eliminatorias, se realiza un diagrama de barras
+con el ranking promedio de los jugadores según la ronda de la
+competición.\\
+
+\begin{center}\includegraphics[width=0.9\linewidth,]{informe_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+En primera instancia, se observa que el ranking promedio en las primeras
+rondas es alto y a medida que se avanza en la competición el ranking
+disminuye.
+
+También, se observa el caso especial del formato de competición Round
+Robin dónde sólo participan los 8 jugadores con mejor ranking por
+temporada. Luego de las rondas Round Robin, dónde se juega un todos
+contra todos, se efectuan las respectivas semifinales y finales. Una vez
+finalizado, se cierra la temporada.
 
 \chapter{Conclusiones y Recomendaciones}
 
